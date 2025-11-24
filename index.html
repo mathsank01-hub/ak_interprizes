@@ -8,9 +8,9 @@
         body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
         header { background: #1a237e; color: white; padding: 20px; text-align: center; }
         nav { display: flex; justify-content: center; background: #283593; }
-        nav a { color: white; padding: 14px 20px; text-decoration: none; font-size: 18px; }
+        nav a { color: white; padding: 14px 20px; text-decoration: none; font-size: 18px; cursor: pointer; }
         nav a:hover { background: #3949ab; }
-        section { padding: 40px; }
+        section { padding: 40px; display: none; }
         h2 { color: #1a237e; }
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .gallery img { width: 100%; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
@@ -19,25 +19,25 @@
 </head>
 <body>
     <header>
-        <h1>AK Interprizes, Chakan</h1>
+        <h1>AK Enterprises, Chakan</h1>
         <p>Specialists in Broach Manufacturing & Repairing</p>
     </header>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#gallery">Photo Gallery</a>
-        <a href="#contact">Contact</a>
+        <a onclick="showTab('home')">Home</a>
+        <a onclick="showTab('about')">About Us</a>
+        <a onclick="showTab('gallery')">Photo Gallery</a>
+        <a onclick="showTab('contact')">Contact</a>
     </nav>
 
     <section id="home">
-        <h2>Welcome to AK Interprizes</h2>
+        <h2>Welcome to AK Enterprises</h2>
         <p>We are a trusted manufacturing company located in Chakan, specializing in broach manufacturing, re-sharpening, tool repairing, and precision engineering services.</p>
     </section>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>AK Interprizes has been serving the Chakan industrial area with high‑quality broach manufacturing and repairing services. With years of experience and advanced machinery, we provide durable, precise, and cost‑effective solutions for clients across multiple industries.</p>
+        <p>AK Interprizes has been serving the Chakan industrial area with high-quality broach manufacturing and repairing services. With years of experience and advanced machinery, we provide durable, precise, and cost-effective solutions for clients across multiple industries.</p>
     </section>
 
     <section id="gallery">
@@ -60,5 +60,13 @@
     <footer>
         <p>© 2025 AK Interprizes, Chakan. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
+        }
+        showTab('home');
+    </script>
 </body>
 </html>
